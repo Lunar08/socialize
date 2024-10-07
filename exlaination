@@ -1,0 +1,130 @@
+BACKEND-------
+--> npm i -g nodemon: The command npm i -g nodemon is used in Node.js development to globally install the Nodemon package via 
+npm (Node Package Manager).
+
+npm: Node Package Manager, which is used to install JavaScript packages.
+
+nodemon: The name of the package being installed. Nodemon is a tool that automatically restarts a Node.js application when it detects file changes in the directory
+
+----------------------------------------------------------------
+
+-->npm i express body-parser bcrypt  cors dotenv gridfs-stream multer multer-gridfs-storage helmet morgan jsonwebtoken mongoose
+
+--express
+Description: A fast and minimal web framework for Node.js.
+Use: It simplifies the process of building web servers and APIs.
+Example: Handling routes, HTTP requests, middleware.
+
+-- body-parser:  It helps extract incoming data, such as JSON or form data, from requests to the server.
+Example: app.use(bodyParser.json()) to parse JSON requests.
+
+--bcrypt: Hash a password before storing it in the database.: It's used to securely hash and compare passwords
+hash: method of converting a password into a string of characters that is difficult to read.
+
+--cors (Cross-Origin Resource Sharing):
+CORS (Cross-Origin Resource Sharing) is a mechanism that allows web applications running in one domain to request resources (like data, images, or scripts) from a different domain. It’s a security feature implemented by browsers to prevent malicious websites from making unauthorized requests to servers on behalf of the user.
+If you have a web application running at https://example.com and an API running at https://api.example.com, without CORS, your browser would block requests from https://example.com to https://api.example.com. CORS is necessary to allow these requests to be made securely and explicitly.
+
+--dotenv: Used to manage sensitive configuration like API keys, database connection strings, etc.
+
+--gridfs-stream: It allows you to store and retrieve large files (such as images, videos) in MongoDB using streams.
+
+--multer: It enables file uploads in Node.js applications.
+
+--multer-gridfs-storage:  A storage engine for Multer to store files directly in MongoDB using GridFS.
+GridFS is a specification that describes how to split files into chunks during storage and reassemble them during retrieval.
+Example: Store uploaded files in MongoDB rather than the filesystem.
+
+-- helmet
+Description: A security middleware for Express.js that helps secure apps by setting various HTTP headers.
+Use: Protects your app from some well-known web vulnerabilities.
+Example: Adding HTTP headers like Strict-Transport-Security, X-Content-Type-Options.
+
+--morgan: Use: It logs HTTP requests to the console or files for debugging and monitoring purposes.
+Example: app.use(morgan('dev')) to log all incoming requests.
+
+--jsonwebtoken (JWT)
+Description: A library to generate and verify JWT (JSON Web Tokens) for authentication.
+Use: It's used for securely transmitting information between parties and authenticating users (e.g., in API authentication).
+Example: Create tokens for user login, and validate tokens for protected routes.
+
+--mongoose:mongoose
+Description: An Object Data Modeling (ODM) library for MongoDB and Node.js.
+Use: It helps manage and interact with MongoDB by defining schemas and models.
+
+----------------------------------------------------
+--> npm init -y:  The command npm init -y is used to quickly initialize a new Node.js project and generate a default package.json
+-y: This flag automatically answers "yes" to all of the prompts that are normally asked during npm init
+
+----------------------------------------------------------------
+Why Use body-parser if express.json() is Already There?
+
+express.json() is part of Express and covers basic JSON parsing. However, body-parser allows more advanced configuration (like setting size limits) and offers additional functionality for other types of data (e.g., form data, URL-encoded data).
+
+---------------------------------------------------------------------
+--> nodemon index.js
+
+------------------------------------------------
+like for auth we also have user for routes we call them on index.js 
+app.use("/auth/", authRoutes);
+app.use("/users", userRoutes); 
+and we should be having respective js file for auth and user that specifies the router or method we use in the routes 
+
+inside controller for the routes or json request/ response
+
+controllers/user.sj=> user.friends array - deals with friends of user
+                    friends.friends array -  deals with friends of friends of user
+
+inside models => we create the schema model, mongoose template  
+
+-- Promise.all: This is used to perform multiple asynchronous operations (fetching all friends' details) in parallel, which makes the process more efficient compared to sequential execution.
+
+
+
+FRONTED ---------------------------------------------------------------
+
+---> npx create-react-app frontend
+
+NPX stands for Node Package eXecute. It is simply an NPM package runner. It allows developers to execute any Javascript Package available on the NPM registry without even installing it
+
+---> npm i react-redux @reduxjs/toolkit redux-persist react-dropzone dotenv formik yup react-router-dom @mui/material @emotion/styled @mui/icons-material
+
+--react-redux:
+Purpose: This library allows you to manage global state in your React applications using Redux, which is a predictable state container.
+Why?: It helps manage complex state logic across different parts of the app, making state management easier and more scalable.
+2. @reduxjs/toolkit:
+Purpose: This is the official, recommended way to write Redux logic. It simplifies the setup and reduces the boilerplate of writing Redux actions, reducers, and stores.
+Why?: It provides a set of tools to make Redux development easier and more efficient, including features like createSlice, createAsyncThunk, and configureStore.
+3. redux-persist:
+Purpose: Helps to persist and rehydrate the Redux store, allowing you to save the state of your app even if the user refreshes the browser or closes the tab.
+Why?: Useful for storing user sessions, authentication tokens, and other essential data that need to persist across sessions.
+4. react-dropzone:
+Purpose: A React library for building file upload components. It allows users to drag-and-drop files or click to upload them.
+Why?: Provides a user-friendly interface for file uploads, particularly useful for handling image or document uploads in web applications.
+5. dotenv:
+Purpose: This library loads environment variables from a .env file into process.env.
+Why?: Allows you to keep sensitive data like API keys, database credentials, and configuration settings outside of your codebase.
+6. formik:
+Purpose: A popular library for building forms in React. It simplifies form handling, validation, and submission.
+Why?: Reduces the complexity of managing forms and validation logic in your React components.
+7. yup:
+Purpose: A schema validation library often used with Formik for form validation.
+Why?: Provides an easy way to define and validate form schemas, making form validation robust and efficient.
+8. react-router-dom:
+Purpose: A routing library for React. It allows you to create multi-page applications with client-side routing.
+Why?: Enables navigation between different pages and components in a React app without reloading the browser.
+9. @mui/material:
+Purpose: Material-UI (MUI) is a popular React UI framework for implementing Material Design components in your app.
+Why?: Provides pre-built, customizable components for rapid UI development, adhering to Google’s Material Design principles.
+10. @emotion/styled:
+Purpose: A CSS-in-JS library that allows you to write styled components within JavaScript using the styled-components API.
+Why?: Used in conjunction with MUI to enable easy customization of components using CSS-in-JS.
+11. @mui/icons-material:
+Purpose: A library that provides Material Design icons as React components, used for integrating icons in MUI apps.
+Why?: It provides access to a large set of Google Material icons, allowing you to easily include vector icons in your app.
+
+----------------------------------------------------------------
+JSX is a syntax extension for JavaScript that allows you to write HTML-like code within JavaScript.
+
+
+FlexBetween: It seems to be a custom component (or a styled Box from Material-UI) that ensures elements inside are spaced between each other. It is used here to align content like the file name and icons.
